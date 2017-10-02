@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // JavaScript Hoisting
+    // Predict the output of the following snippets. Do not plug these into the interpreter!
+
+    // 1: Question
+    // console.log(hello);
+    // var hello = 'world';
+
+    // 1: Answer
+    // var hello; -- set's hello to undefined
+    // console.log(hello) -- logs onto the console 'undefined'
+    // hello = 'world'
+
+    // 2: Question
+    // var needle = 'haystack';
+    // test();
+    // function test(){
+    //     var needle = 'magnet';
+    //     console.log(needle);
+    // }
+
+    // 2: Answer
+    // var needle; -- declarations get hoisted to the top
+    // function test(){ -- functions get hosted to the top as well
+    //     var needle; -- var in scope of function is hoisted to top
+    //     needle = 'magnet'
+    //     console.log(needle) -- output 'magnet'
+    // }
+    // needle = 'haystack'
+    // test(); -- console.log within test should outpout 'magnet'
+
+    // 3: Question
+    // var brendan = 'super cool';
+    // function print(){
+    // 	brendan = 'only okay';
+    // 	console.log(brendan);
+    // }
+    // console.log(brendan);
+
+    // 3: Answer
+    // var brendan;
+    // function print(){
+    //     brendan = "only okay"; -- sets var brendan = "only okay"
+    //     console.log(brendan); -- logs "only okay"
+    // }
+    // brendan = 'super cool';
+    // console.log(brendan) -- console.log should only show 'super cool' because the function is never called.
+
+    // 4: Question
+    // var food = 'chicken';
+    // console.log(food);
+    // eat();
+    // function eat(){
+    //     food = 'half-chicken';
+    //     console.log(food);
+    //     var food = ‘gone’;
+    // }
+
+    // 4: Answer
+    // var food; -- sets food as a variable (undefined)
+    // function eat(){
+    //     var food; -- sets var food within scope of function
+    //     food = 'half-chicken'; -- food is now 'half-chicken'
+    //     console.log(food); -- output is 'half-chicken'
+    //     food = 'gone';
+    // }
+    // food = 'chicken'
+    // console.log(food) -- outputs 'chicken'
+    // eat(); -- outputs 'half-chicken'
+
+    // 5: Question
+    // mean();
+    // console.log(food);
+    // var mean = function() {
+    //     food = "chicken";
+    //     console.log(food);
+    //     var food = "fish";
+    //     console.log(food);
+    // }
+    // console.log(food);
+
+    // 5: Answer
+    // var mean; -- mean gets hoisted to the top as undefined
+    // mean(); -- error because function has not been set yet
+    // console.log(food) -- error food not defined
+    // mean = function() {
+    //     var food; -- food gets hoisted to the top
+    //     food = "chicken"
+    //     console.log(food) -- if called output should be "chicken"
+    //     food = "fish"
+    //     console.log(food) -- if called output should be "fish"
+    // }
+    // console.log(food) -- error food still not defined, only within scope of function
+
+    // 6: Question
+    // console.log(genre);
+    // var genre = "disco";
+    // rewind();
+    // function rewind() {
+    //     genre = "rock";
+    //     console.log(genre);
+    //     var genre = "r&b";
+    //     console.log(genre);
+    // }
+    // console.log(genre);
+
+    // 6: Answer
+    // var genre; -- hoisted to the top 
+    // function rewind(){
+    //     var genre -- hoisted to the top
+    //     genre = "rock"
+    //     console.log(genre) -- if called output should be "rock"
+    //     genre = "r&b"
+    //     console.log(genre) -- if called output should be "r&b"
+    // }
+    // console.log(genre) -- will return undefined
+    // genre = "disco" -- sets genre to equal "disco"
+    // rewind(); -- calls on the function, should output "rock" & "r&b"
+    // console.log(genre) -- outputs "disco"
+
+    // 7: Question
+    // dojo = "san jose";
+    // console.log(dojo);
+    // learn();
+    // function learn() {
+    //     dojo = "seattle";
+    //     console.log(dojo);
+    //     var dojo = "burbank";
+    //     console.log(dojo);
+    // }
+    // console.log(dojo);
+
+    // 7: Answer
+    // function learn(){ -- function gets hoisted to the top
+    //     var dojo; -- var dojo hoisted to top as undefined
+    //     dojo = "seattle";
+    //     console.log(dojo); -- when called outputs "seattle"
+    //     dojo = "burbank";
+    //     console.log(dojo); -- when called outputs "burbank"
+    // }
+    // dojo = "san jose" -- error due to dojo not being set as a variable
+    // console.log(dojo) -- error due to dojo not being set
+    // learn() -- if no other errors would output "seattle" & "burbank"
+    // console.log(dojo); -- error because dojo is not set
+
+
+</script>
+</html>
